@@ -45,6 +45,7 @@ img {
   display: flex;
   justify-content: space-between;
   padding-top: 1rem;
+  z-index: 1;
 
   ul {
     display: flex;
@@ -53,7 +54,7 @@ img {
   li {
     padding: 1rem 1.5rem;
   }
-  
+
   a {
     text-decoration: none;
     color: #fff;
@@ -75,7 +76,7 @@ img {
 // Header
 #header {
   &-home {
-    background: $bg-img no-repeat center right / cover;
+    background: $overlay-darken;
     height: 100vh;
     color: #fff;
 
@@ -91,17 +92,33 @@ img {
     }
   }
 
-  // For navbars outside home page
+  // For nav bars outside home page
   &-inner {
-    background: $bg-img no-repeat 10% 1% / cover;
+    background: $overlay-darken;
     height: 5.5rem;
     border-bottom: 3px solid $main-color;
+  }
+
+  // Overlay
+  &-home:before, &-inner:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $bg-img no-repeat center right / cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  &-inner:before {
+    background: $bg-img no-repeat 10% 1% / cover;
+    height: 5.5rem;
   }
 }
 
 // Home Section
 #home {
-
   // Section A
   &-a {
     .specials {
@@ -387,6 +404,5 @@ img {
   }
 }
 
-
 // Media Query
-@import 'media';
+@import "media";

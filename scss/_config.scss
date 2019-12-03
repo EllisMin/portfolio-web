@@ -5,6 +5,7 @@ $light-color: #f4f4f4;
 $med-color: #ccc;
 $dark-color: #333;
 $bg-img: url("../img/showcase.jpg");
+$overlay-darken: rgba(0, 0, 0, 0.15);
 
 // Set Text Color
 @function set-text-color($bg-color) {
