@@ -33,11 +33,31 @@
     background-color: $dark-color;
   }
 }
+
 // ^: contains
 button[class^="btn-"]:hover,
 a[class^="btn-"]:hover,
 input[class^="btn-"]:hover {
   background-color: $main-color;
+}
+
+.bg {
+  &-main {
+    background: $main-color;
+    color: set-text-color($main-color);
+  }
+  &-dark {
+    background: $dark-color;
+    color: set-text-color($dark-color);
+  }
+  &-med {
+    background: $med-color;
+    color: set-text-color($med-color);
+  }
+  &-light {
+    background: $light-color;
+    color: set-text-color($light-color);
+  }
 }
 
 .lead {
@@ -63,6 +83,7 @@ input[class^="btn-"]:hover {
     padding: 4rem 0;
   }
 }
+
 // Margin
 .my {
   &-1 {
