@@ -9,7 +9,12 @@
   position: relative;
   background: $main-color;
   overflow: hidden;
-  border-left: $main-color 2px solid;
+  &:nth-child(odd) {
+    border-left: $main-color 2px solid;
+  }
+  &:nth-child(even) {
+    border-left: $main-color-lighter 2px solid;
+  }
 
   // Overlay
   &::after {

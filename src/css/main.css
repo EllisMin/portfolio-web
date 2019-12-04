@@ -21,7 +21,8 @@
 
 .btn-dark {
   color: #f4f4f4;
-  background-color: #333; }
+  background-color: #333;
+  padding: 0.8rem 1rem; }
 
 button[class^="btn-"]:hover,
 a[class^="btn-"]:hover,
@@ -99,8 +100,11 @@ input[class^="btn-"]:hover {
 .item {
   position: relative;
   background: #ffbc00;
-  overflow: hidden;
-  border-left: #ffbc00 2px solid; }
+  overflow: hidden; }
+  .item:nth-child(odd) {
+    border-left: #ffbc00 2px solid; }
+  .item:nth-child(even) {
+    border-left: #fcc326 2px solid; }
   .item::after {
     content: "";
     position: absolute;
@@ -311,6 +315,16 @@ img {
       #home-c .process-icon:hover .process-step {
         background: #333;
         color: #fff; }
+  #home-c .process div {
+    transform: scale(0.9, 0.9);
+    -ms-transform: scale(0.9, 0.9);
+    /* IE 9 */
+    -webkit-transform: scale(0.9, 0.9);
+    /* Safari and Chrome */
+    -o-transform: scale(0.9, 0.9);
+    /* Opera */
+    -moz-transform: scale(0.9, 0.9);
+    /* Firefox */ }
 
 #about-a .about-info {
   display: grid;
@@ -358,20 +372,20 @@ img {
   #about-c .about-logos img {
     width: 75%; }
 
-#about-d .reviews {
+#about-d .testimonials {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0.5rem; }
-  #about-d .reviews ul {
+  #about-d .testimonials ul {
     list-style: none;
     margin-top: 1rem;
     display: flex;
     align-items: center; }
-  #about-d .reviews p {
+  #about-d .testimonials p {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 0.5rem; }
-  #about-d .reviews img {
+  #about-d .testimonials img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -395,6 +409,14 @@ img {
     height: 100px; }
   #contact-a .text-fields .text-input {
     padding: 0.5rem 1rem; }
+  #contact-a .text-fields input,
+  #contact-a .text-fields textarea {
+    border: #ccc 1px solid; }
+  #contact-a .text-fields input:focus,
+  #contact-a .text-fields textarea:focus {
+    outline: none;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px #ffbc00; }
 
 #contact-a button[type="submit"] {
   width: 30%; }
@@ -430,7 +452,71 @@ img {
         background: #ffbc00; }
 
 @media (max-width: 800px) {
-  #header-home {
+  #header-home, #header-home:before {
     height: 30rem; }
+  #header-inner, #header-inner:before {
+    height: 4rem; }
+  #header .header-content {
+    padding-top: 5rem; }
+  #main-nav {
+    padding-top: 0.5rem; } }
+
+@media (max-width: 500px) {
+  #main-nav {
+    flex-direction: column;
+    align-items: center; }
+    #main-nav li {
+      padding: 1rem; }
+  #header-home, #header-home:before, #header-inner, #header-inner:before {
+    height: 9rem; }
+  #header-home:before, #header-inner:before {
+    background-position: 10% 0%; }
+  #header-home {
+    border-bottom: 3px #ffbc00 solid; }
     #header-home .header-content {
-      padding-top: 5rem; } }
+      display: none; }
+  #home-a .specials,
+  #home-b .stats,
+  #home-c .process,
+  #about-d .testimonials,
+  #contact-b .contact-info,
+  .items {
+    grid-template-columns: 1fr; }
+  #home-a .specials div {
+    border-bottom: 1px #f4f4f4 solid;
+    padding-bottom: 1rem; }
+    #home-a .specials div:last-child {
+      border: none;
+      padding-bottom: 0; }
+  #home-b .stats div {
+    padding: 1rem 0; }
+  #about-a .about-info {
+    grid-template-areas: "bio-img" "bio" "aw1" "aw2" "aw3"; }
+  #about-c {
+    display: none; }
+  #contact-a .text-fields {
+    grid-template-areas: "name" "subject" "email" "phone" "message"; }
+  #contact-b div {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px #555 solid; }
+    #contact-b div:last-child {
+      border: none;
+      margin-bottom: 0;
+      padding-bottom: 0; }
+  #contact-c h1 {
+    font-size: 2rem; }
+  #main-footer {
+    height: 7rem; }
+    #main-footer .footer-content {
+      flex-direction: column;
+      padding: 1rem;
+      height: 5rem; } }
+
+@media (max-height: 580px) {
+  #header-home .header-content {
+    padding-top: 3rem; } }
+
+@media (max-height: 360px) {
+  #header-home .header-content h1 {
+    font-size: 2rem; } }
